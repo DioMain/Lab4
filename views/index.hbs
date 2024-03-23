@@ -1,10 +1,20 @@
 <div class="bookmark-container container overflow-auto">
-    {{#each elements}}
-    <a class="row bookmark-row" href="/update?name={{this.Name}}">
-        <div class="col">{{this.Name}}</div>
-        <div class="col">{{this.Number}}</div>
-    </a>
-    {{/each}}
+    {{#if def}}
+        {{#each elements}}
+            {{> element}}
+        {{/each}}
+    {{/if}}
+    {{#if add}}
+        {{#each elements}}
+            {{> element}}
+        {{/each}}
+    {{/if}}
+    {{#if upd}}
+        {{#each elements}}
+            {{> element_static}}
+        {{/each}}
+    {{/if}}
+    
 </div>
 
 <div class="bookmark-controll container">

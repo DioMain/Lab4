@@ -56,3 +56,19 @@ function add(name, number) {
 function back() {
     window.location.assign(`/`);
 }
+
+function nameFieldChanged(name, number, newName, newNumber) {
+    /**
+     * @type {HTMLInputElement}
+     */
+    let but = document.getElementById('button_delete');
+
+    console.log(`${name} ${number} ${newName} ${newNumber}`);
+
+    if (name !== newName.trim() || number !== newNumber.trim()) {
+        but.disabled = true;
+    }
+    else {
+        but.disabled = false;
+    }
+}

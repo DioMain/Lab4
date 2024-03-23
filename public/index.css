@@ -19,7 +19,7 @@
     margin-top: 8px;
 }
 
-.bookmark-row {
+.bookmark-row, .bookmark-row-static {
     font-size: 26px;
     background-color: #E0E0E0;
 

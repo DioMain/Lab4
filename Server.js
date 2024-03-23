@@ -52,34 +52,8 @@ app.get("/add", (req, res) => {
 app.post("/add", (req, res) => {
     let nelement = new BookmarkElement();
 
-    nelement.Name = req.body.Name;
-    nelement.Number = req.body.Number;
-
-    Elements.push(nelement);
-
-    fs.writeFileSync('./data.json', JSON.stringify(Elements));
-
-    res.end("ok");
-});
-
-app.post("/add", (req, res) => {
-    let nelement = new BookmarkElement();
-
-    nelement.Name = req.body.Name;
-    nelement.Number = req.body.Number;
-
-    Elements.push(nelement);
-
-    fs.writeFileSync('./data.json', JSON.stringify(Elements));
-
-    res.end("ok");
-});
-
-app.post("/add", (req, res) => {
-    let nelement = new BookmarkElement();
-
-    nelement.Name = req.body.Name;
-    nelement.Number = req.body.Number;
+    nelement.Name = req.body.Name.trim();
+    nelement.Number = req.body.Number.trim();
 
     Elements.push(nelement);
 
@@ -91,9 +65,9 @@ app.post("/add", (req, res) => {
 app.post("/update", (req, res) => {
 
     Elements.forEach(i => {
-        if (i.Name === req.body.OriginalName){
-            i.Name = req.body.Name;
-            i.Number = req.body.Number;
+        if (i.Name === req.body.OriginalName.trim()){
+            i.Name = req.body.Name.trim();
+            i.Number = req.body.Number.trim();
 
             return;
         }

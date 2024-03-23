@@ -1,8 +1,10 @@
 <div class="controll-add">
-    <input id="name_field" type="Text" class="form-control" value="{{updateElement.Name}}" placeholder="name"/>
-    <input id="number_field" type="Text" class="form-control" value="{{updateElement.Number}}" placeholder="number"/>
+    <input id="name_field" oninput="nameFieldChanged('{{updateElement.Name}}', '{{updateElement.Number}}', name_field.value, number_field.value)" 
+           type="Text" class="form-control" value="{{updateElement.Name}}" placeholder="name"/>
+    <input id="number_field" oninput="nameFieldChanged('{{updateElement.Name}}', '{{updateElement.Number}}', name_field.value, number_field.value)"
+        type="Text" class="form-control" value="{{updateElement.Number}}" placeholder="number"/>
 
     {{getBackButton}}
-    <input type="button" class="btn btn-danger" value="Удалить" onclick="_delete('{{updateElement.Name}}')"/>
+    <input id="button_delete" type="button" class="btn btn-danger" value="Удалить" onclick="_delete('{{updateElement.Name}}')"/>
     <input type="button" class="btn btn-primary" value="Изменить" onclick="update('{{updateElement.Name}}', name_field.value, number_field.value)"/>
 </div>
